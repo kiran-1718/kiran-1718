@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feliz Aniversário 🎂</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f8cdd3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+}
+
+.heart {
+    font-size: 40px;
+    color: red;
+    margin-bottom: 10px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* envelope */
+/* O corpo do envelope (o fundo rosa que você quer preencher) */
+.envelope {
+    position: relative;
+    width: 280px;/* O corpo do envelope (o fundo rosa que você quer preencher) */
+.envelope {
+    position: relative;
+    width: 280;
+    height: 0px;
+    background: #f497a9; /* Cor das laterais e fundo */
+    margin:0;
+    border-radius: 25px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    z-index: 2;
+}
+
+/* A parte da frente (o triângulo de baixo que sobe) */
+.envelope::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f497a9; /* Mesma cor do envelope */
+    
+    z-index: 3; /* Fica na frente da carta branca */
+}
+
+/* A tampa do envelope (o triângulo de cima) */
+.flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #e16b80; /* Cor um pouco mais escura para dar destaque */
+    clip-path: polygon(0 0, 100% 0, 50% 50%);
+    transition: 0.5s ease-in-out;
+    transform-origin: top;
+    z-index: 4; /* Fica na frente de tudo quando fechado */
+}
+
+/* Ajuste na carta para ela não aparecer nos cantos quando fechada */
+.letter {
+    position: absolute;
+    width: 90%;
+    height: 160px;
+    background: white;
+    top: 5%;
+    left: 5%;
+    border-radius: 5px;
+    padding: 15px;
+    box-sizing: border-box;
+    transition: 0.8s ease-in-out;
+    text-align: center;
+    z-index: 2; /* Fica entre o fundo do envelope e a frente (::before) */
+    overflow-y: auto;
+}
+
+/* Quando o envelope estiver aberto */
+.open .flap {
+    transform: rotateX(180deg);
+    z-index: 1; /* Vai para trás para a carta poder subir */
+}
+
+.open .letter {
+    transform: translateY(-130px); /* A carta sobe para fora */
+    z-index: 5; /* Fica na frente de tudo ao sair */
+}
+    height: 180px;
+    background: #f497a9; /* Cor das laterais e fundo */
+    margin: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    z-index: 1;
+}
+
+/* A parte da frente (o triângulo de baixo que sobe) */
+.envelope::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f497a9; /* Mesma cor do envelope */
+    /* Esse comando cria o formato exato de envelope na frente */
+    /*clip-path: polygon(0% 40%, 50% 100%, 100% 40%, 100% 100%, 0% 100%);*/
+    z-index: 3; /* Fica na frente da carta branca */
+}
+
+/* A tampa do envelope (o triângulo de cima) */
+.flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #e16b80; /* Cor um pouco mais escura para dar destaque */
+    clip-path: polygon(0 0, 100% 0, 50% 50%);
+    transition: 0.5s ease-in-out;
+    transform-origin: top;
+    z-index: 4; /* Fica na frente de tudo quando fechado */
+}
+
+/* Ajuste na carta para ela não aparecer nos cantos quando fechada */
+.letter {
+    position: absolute;
+    width: 90%;
+    height: 160px;
+    background: white;
+    top: 5%;
+    left: 5%;
+    border-radius: 5px;
+    padding: 15px;
+    box-sizing: border-box;
+    transition: 0.8s ease-in-out;
+    text-align: center;
+    z-index: 2; /* Fica entre o fundo do envelope e a frente (::before) */
+    overflow-y: auto;
+}
+
+/* Quando o envelope estiver aberto */
+.open .flap {
+    transform: rotateX(180deg);
+    z-index: 1; /* Vai para trás para a carta poder subir */
+}
+
+.open .letter {
+    transform: translateY(-130px); /* A carta sobe para fora */
+    z-index: 5; /* Fica na frente de tudo ao sair */
+}
+
+/* botões */
+.buttons {
+    margin-top: 30px;
+}
+
+button {
+    padding: 12px 25px;
+    border: 2px solid #c94c63;
+    background: white;
+    color: #c94c63;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #c94c63;
+    color: white;
+}
+
+/* 📱 MOBILE */
+@media(max-width: 480px) {
+    .envelope {
+        width: 260px;
+    }
+    .envelope::before {
+        border-width: 0 130px 180px 130px;
+    }
+    .flap {
+        border-width: 90px 130px 0 130px;
+    }
+    .open .letter {
+        transform: translateY(-100px); /* Ajuste para não sair da tela no mobile */
+        width: 100%;
+        left: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="heart">❤️</div>
+
+    <div class="envelope" id="envelope">
+        <div class="flap"></div>
+
+        <div class="letter">
+            <h3>Feliz Aniversário 🎉</h3>
+            <p>
+                Hoje é um dia muito especial!<br>
+                Te desejo muita felicidade, amor e sucesso 💖,<br><br>
+                Meu bem,<br>
+                que as guerras da vida não tirem o brilho do seu olhar...<br>
+                <br><br>
+                Nada venha tirar esse seu sorriso único do seu rosto.<br><br>
+                Que, não importa o que aconteça,<br>
+                nada e nem ninguém faça você duvidar<br>
+                da força que você tem.<br><br>
+                Espero que você enxergue um pouco<br>
+                de como lhe vejo:<br>
+                essa mulher incrível,<br>
+                com atitudes à frente do seu tempo,<br>
+                muito madura para sua idade.<br><br>
+                E a força a que me refiro<br>
+                é a firmeza de como age,<br>
+                de como fala,<br>
+                de como leva a vida,<br>
+                de como toma atitude<br>
+                e não cede a algo<br>
+                só porque lhe foi imposto.<br><br>
+                De coração,<br>
+                espero que Deus lhe acompanhe na sua jornada<br>
+                e lhe guarde de todo laço<br>
+                e de todas as armadilhas.
+            </p>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <button onclick="abrir()">Abrir Carta</button>
+        <button onclick="fechar()">Fechar</button>
+    </div>
+
+    <audio id="musica">
+        <source src="ComoeQueAGenteFica.mp3" type="audio/mpeg">
+    </audio>
+</div>
+
+<script>
+function abrir(){
+    document.getElementById("envelope").classList.add("open");
+    const musica = document.getElementById("musica");
+    musica.play().catch(e => console.log("Aguardando interação para áudio"));
+}
+
+function fechar(){
+    document.getElementById("envelope").classList.remove("open");
+    document.getElementById("musica").pause();
+}
+</script>
+
+</body>
+</html>
