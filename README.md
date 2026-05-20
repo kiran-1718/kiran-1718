@@ -1,16 +1,16 @@
-## Hi there 👋
+# Laboratório de Estudos de Kiran
+Bem-vindo! Este perfil é o meu espaço de experimentação. Aqui guardo
+códigos de cursos, testes de lógica e rascunhos de ferramentas.
 
-<!--
-**kiran-1718/kiran-1718** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+### O que estou explorando no momento:
+- Aprendendo lógica de programação e novas sintaxes.
+- Testando ferramentas de automação.
+- aprendendo um pouco de POO
 
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+- Organizando scripts úteis para o dia a dia.
+### Organização dos Repositórios:
+- **`study-`**: Conteúdo de cursos e tutoriais.
+- **`lab-`**: Experimentos rápidos e testes de bibliotecas.
+- **`tool-`**: Pequenas ferramentas que realmente uso.
+---
+*Nota: Este é um perfil paralelo para fins educacionais.*
